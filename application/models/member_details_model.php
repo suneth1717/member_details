@@ -70,4 +70,11 @@ class member_details_model extends CI_Model {
        $this->db->where('member_id', $id);
         return $result=$this->db->update('member_details_tb',$datas); 
     }
+    function get_deleted_member_details(){
+        $this->db->select('*');
+        $this->db->where('delete_state',1);
+        $query=$this->db->get('member_details_tb');
+        return $query->result_array();
+        
+    }
 }
