@@ -1,0 +1,42 @@
+#banner {
+    width:1140px;
+    height:130px;
+    background-image:url('../../images/header.png');
+    background-size:cover;
+    
+}
+#header {
+    background-color:#003366;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:100%;
+    width:100px;
+    float:left;
+    padding:5px;	      
+}
+#side{
+line-height:30px;
+    background-color:#eeeeee;
+    height:100%;
+    width:800px;
+    float:right;
+    padding:5px;
+}
+#section {
+    width:100px;
+    float:left;
+    padding:10px;	 	 
+}
+
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;	 	 
+}
