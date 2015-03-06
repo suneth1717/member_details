@@ -37,7 +37,8 @@ class member_details_model extends CI_Model {
         $this->db->order_by('id','desc');
         $this->db->limit(1);
         $query=$this->db->get('member_details_tb');
-        return $query->result_array();  
+        return $query->result_array();
+        
     }
     function get_more_details($id){
         $this->db->select('*');
@@ -67,6 +68,6 @@ class member_details_model extends CI_Model {
     function delete_member($id){
         $datas=array('delete_state'=>1);
        $this->db->where('member_id', $id);
-        $this->db->update('member_details_tb',$datas); 
+        return $result=$this->db->update('member_details_tb',$datas); 
     }
 }

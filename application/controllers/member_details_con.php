@@ -111,19 +111,44 @@ class member_details_con extends CI_Controller {
     function show_member_details() {
         $id = $this->input->post('id');
         $name = $this->input->post('name');
-        $data['result']=$this->member_details_model->search_member($id,$name);
+        
         if($name==null){
             $name=1;
         }
         
        $data['result'] = $this->member_details_model->search_member($id, $name);
+       //var_dump($data);
+       //echo $data['result'][0]['delete_state'];
+       //echo count($data['result']);
+       $y=0;
+       for($x=0;$x<count($data['result']);$x++){
+           if($data['result'][$x]['delete_state']==1){
+               $y++;
+           }
+       }
+       if($y==count($data['result'])){
+          $this->session->set_flashdata('message', '2');
+            redirect('member_details_con/show_serach'); 
+       }
+       else{
+       $i=0;
+       for($x=0;$x<count($data['result']);$x++){
+           if($data['result'][$x]['delete_state']==0){
+               //echo $x;
+               $newData['result'][$i]=$data['result'][$x];
+               $i++;
+           }
+       }
+       //var_dump($newData);
+      
         if ($data['result'] == false) {
             $this->session->set_flashdata('message', '2');
             redirect('member_details_con/show_serach');
         } else {
 
-            $this->load->view('member_details_display_page', $data);
+            $this->load->view('member_details_display_page', $newData);
         }
+       }
     }
     /**
      * author R.A.S.P Senanayake. 
@@ -171,12 +196,11 @@ class member_details_con extends CI_Controller {
         $member_id=$this->input->post('member_id');
         //$member_id; 
         $result = $this->member_details_model->delete_member($member_id);
-        if ($result == false) {
-            $this->session->set_flashdata('message', '2');
+        echo $result; 
+        if ($result == 1) {
+            $this->session->set_flashdata('message', '3');
             redirect('member_details_con/show_serach');
         } else {
-
-          $this->session->set_flashdata('message', '3');
             echo "Database error!";
         }
     }
