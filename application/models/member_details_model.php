@@ -77,4 +77,9 @@ class member_details_model extends CI_Model {
         return $query->result_array();
         
     }
+    function delete_old_member($member_id){
+        $this->db->where('member_id', $member_id);
+        return $query=$this->db->delete('member_details_tb');
+        
+    }
 }

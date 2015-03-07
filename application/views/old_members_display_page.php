@@ -57,7 +57,7 @@
                             echo'<td>' . $row['phoneno_h'] . '</td>';
                             echo'<td>' . $row['email'] . '</td>';
                             echo'<td><img src="' . $row['profile_pic'] . '" height="130px" width="130px"></td>';
-                            echo'<td><p><a href="' . site_url() . '/member_details_con/more_details/' . $row['member_id'] . '">More details</a></p><p><a href="' . site_url() . '/member_details_con/edit_details/' . $row['member_id'] . '">Edit</a></p><p><a href="' . site_url() . '/member_details_con/delete_member/' . $row['member_id'] . '">Delete</a></p></td>';
+                            echo'<td><p><a href="' . site_url() . '/member_details_con/more_details/' . $row['member_id'] . '">More details</a></p><p><a href="' . site_url() . '/member_details_con/edit_details/' . $row['member_id'] . '">Edit</a></p><p><a href="' . site_url() . '/member_details_con/delete_old_member/' . $row['member_id'] . '">Delete</a></p></td>';
                             echo'</tr>';
                         }
                         ?>

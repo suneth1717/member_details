@@ -213,5 +213,22 @@ class member_details_con extends CI_Controller {
         //var_dump($result);
         $this->load->view('old_members_display_page', $data);
     }
+    function delete_old_member(){
+       $id = $this->uri->segment(3);
+        $result['result'] = $this->member_details_model->get_more_details($id);
+        //var_dump($result);
+        $this->load->view('delete_old_member', $result); 
+    }
+    function deleteOldMember(){
+        $member_id = $this->input->post('member_id');
+        //echo $member_id;
+        $result = $this->member_details_model->delete_old_member($member_id);
+        if ($result == 1) {
+            $this->session->set_flashdata('message', '3');
+            redirect('member_details_con/show_serach');
+        } else {
+            echo "Database error!";
+        }
+    }
 
 }
