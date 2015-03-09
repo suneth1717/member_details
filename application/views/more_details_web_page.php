@@ -29,6 +29,7 @@
                 echo '<li><a href="'. site_url().'/member_details_con/index">Member Setup</a></li>';
                 echo '<li><a href="'. site_url().'/member_details_con/show_serach">Display Member Details</a></li>';
                 echo '<li><a href="' . site_url() . '/member_details_con/deleted_members">Deleted Members Details</a></li>';
+                echo '<li><a href="' . site_url() . '/home/logout">Logout</a></li>';
                 ?>
             </ul>
             <div class="row clearfix">
