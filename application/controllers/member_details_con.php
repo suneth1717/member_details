@@ -29,6 +29,7 @@ class member_details_con extends CI_Controller {
      */
     function index() {
         $data['message'] = $this->session->flashdata('message');
+        //var_dump($data);
         $this->load->view('web_page', $data);
     }
 
