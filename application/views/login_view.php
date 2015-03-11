@@ -34,6 +34,7 @@
             <ul id="menu">
                 <?php
                 echo '<li><a href="' . site_url() . '/login/index">login Setup</a></li>';
+                echo '<li><a href="' . site_url() . '/login/signUp">Sign Up</a></li>';
                 ?>
             </ul>
 
@@ -66,13 +67,13 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="username">User Name</label>
                         <div class="col-sm-10">
-                            <input id="username" type="text" name="username" style="width: 50%;"/>
+                            <input id="username" type="text" name="username" style="width: 35%;"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="password">Password</label>
                         <div class="col-sm-10">
-                            <input id="password" type="password" name="password" style="width: 50%;"/>
+                            <input id="password" type="password" name="password" style="width: 35%;"/>
                         </div>
                     </div>
                 </div>

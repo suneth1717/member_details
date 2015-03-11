@@ -201,7 +201,7 @@ class member_details_con extends CI_Controller {
         $member_id = $this->input->post('member_id');
         //$member_id; 
         $result = $this->member_details_model->delete_member($member_id);
-        echo $result;
+        //echo $result;
         if ($result == 1) {
             $this->session->set_flashdata('message', '3');
             redirect('member_details_con/show_serach');

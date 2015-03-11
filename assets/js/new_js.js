@@ -82,13 +82,13 @@ function validate_tel2() {
     if (phoneno.test(telno2) == false)
     {
         document.getElementById("telno2").innerHTML = "Enter valid phone number.";
-        tel2.focus();
+        document.getElementById("tel2").focus();
     }
     else
     {
         if (telno1 == telno2) {
             document.getElementById("telno2").innerHTML = "Enter different phone number.";
-            tel2.focus();
+            document.getElementById("tel2").focus();
         } else {
             document.getElementById("telno2").innerHTML = "";
         }
@@ -118,6 +118,7 @@ function validate_tel3() {
 $(document).ready(function(){
     $('#myTable').dataTable();
 });
+
 
 
 

@@ -20,5 +20,19 @@ Class user extends CI_Model
      return false;
    }
  }
+ function insert_signup_data($data){
+     $data1=array(
+         'username'=> $data['username'],
+         'password'=> MD5($data['pw'])
+     );
+     return $result=$this->db->insert('users',$data1);
+ }
+ function check_username($username){
+     $this->db->select('username');
+     $this->db->from('users');
+     $this->db->where('username',$username);
+     $query=$this->db->get();
+     return $query->result(); 
+ }
 }
 ?>
